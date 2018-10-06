@@ -151,6 +151,26 @@ function LinkedList () {
         }
         return temp2.value;
     }
+
+    // 翻转链表
+    this.reverse = function () {
+        if(head === null) {
+            return null;
+        }
+        let reversedHead = null;
+        let cur = head;
+        let pre = null;
+        while(cur) {
+            let pNext = cur.next;
+            if(pNext === null) {
+                reversedHead = cur;
+            }
+            cur.next = pre;
+            pre = cur;
+            cur = pNext;
+        }
+        return reversedHead.value;
+    }
 }
 
 module.exports = LinkedList;

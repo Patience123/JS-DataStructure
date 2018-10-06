@@ -30,3 +30,4 @@ console.log('结点28的位置：' + linkedList.findIndex(28));
 
 console.log('链表的中间结点：' + linkedList.findMidNode());
 console.log(`链表倒数第${k}个结点：${linkedList.findKthToTail(k)}`);
+console.log('翻转链表后的头结点：' + linkedList.reverse());
