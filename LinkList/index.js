@@ -115,6 +115,42 @@ function LinkedList () {
         }
         return string;
     }
+
+    // 扩展
+    // 求链表的中间结点
+    this.findMidNode = function () {
+        if(head === null) {
+            return null;
+        }
+        let temp1 = head;
+        let temp2 = head;
+        while(temp1 && temp1.next) {
+            temp1 = temp1.next.next;
+            temp2 = temp2.next;
+        }
+        return temp2.value;
+    }
+
+    // 求链表倒数第K个结点
+    this.findKthToTail = function (k) {
+        if(head === null || k === 0) {
+            return null;
+        }
+        let temp1 = head;
+        for(let i = 0; i < k-1; i++) {
+            if(temp1.next) {
+                temp1 = temp1.next;
+            } else {
+                return null;
+            }
+        }
+        let temp2 = head;
+        while(temp1.next) {
+            temp1 = temp1.next;
+            temp2 = temp2.next;
+        }
+        return temp2.value;
+    }
 }
 
 module.exports = LinkedList;

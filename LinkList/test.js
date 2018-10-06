@@ -6,6 +6,7 @@ function random(max, min) {
 }
 
 let linkedList = new LinkedList();
+let k = 3;
 console.log(linkedList.isEmpty()); // true
 
 for(let i = 0; i < 12; i++) {
@@ -25,4 +26,7 @@ linkedList.removeAt(5);
 linkedList.removeAt(linkedList.size() - 1);
 console.log(linkedList.toString());
 
-console.log(linkedList.findIndex(28));
+console.log('结点28的位置：' + linkedList.findIndex(28));
+
+console.log('链表的中间结点：' + linkedList.findMidNode());
+console.log(`链表倒数第${k}个结点：${linkedList.findKthToTail(k)}`);
